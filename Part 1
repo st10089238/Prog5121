@@ -10,8 +10,15 @@ String lastName;
 
 public static void main(String[] args) {
 
+System.out.print("Enter Firstname: ");
+String f = input.nextLine();
+
+System.out.print("Enter Lastname: ");
+String f = input.nextLine();
+
+
 System.out.print("Input a Username: ");
-        String s = input.nextLine();
+        String u = input.nextLine();
 
         if (valid_userName()) {
             System.out.println("Username successfully captured.");
