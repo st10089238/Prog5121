@@ -1,0 +1,61 @@
+import java.util.Scanner; 
+import java.util.regex.*;   
+
+class Login{ 
+
+String userName;     
+String password;     
+String firstName;     
+String lastName;       
+
+public static void main(String[] args) {
+
+System.out.print("Input a Username: ");
+        String s = input.nextLine();
+
+        if (valid_userName()) {
+            System.out.println("Username successfully captured.");
+        } else {
+            System.out.println("Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.");
+        }
+
+    }
+    
+    public static boolean valid_userName(String userName){
+      if (userName.length()>5, userName.indexOf('_')==1)
+    
+
+        System.out.print("Input a password: ");
+        String s = input.nextLine();
+
+        if (valid_password()) {
+            System.out.println("Password successfully captured.");
+        } else {
+            System.out.println("Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number and a special character.”);
+        }
+
+    }
+
+    public static boolean valid_password(String password) {
+        if (password.length() < PASSWORD_LENGTH) return false;
+
+        int charCount = 0;
+        int numCount = 0;
+        for (int i = 0; i < password.length(); i++) {
+
+            char ch = password.charAt(i);
+            if (is_Numeric(ch)) numCount++;
+            else if (is_Letter(ch)) charCount++;
+            else return false;
+        }
+        return (charCount >= 2 && numCount >= 2);
+    }
+    public static boolean is_Letter(char ch) {
+        ch = Character.toUpperCase(ch);
+        return (ch >= 'A' && ch <= 'Z');
+    }
+    public static boolean is_Numeric(char ch) {
+        return (ch >= '0' && ch <= '9');
+    }
+
+}
